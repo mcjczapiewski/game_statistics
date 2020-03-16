@@ -1,6 +1,7 @@
 import reports
 
 file_name = reports.file_name
+
 print(
     "\nThere are "
     + str(reports.count_games(file_name))
@@ -37,3 +38,8 @@ print(
     "\nTop sold FPS was released in "
     + str(reports.when_was_top_sold_fps(file_name))
 )
+
+with open(
+    __file__.split("printing.py")[0] + "export_report.txt", "w"
+) as write_out:
+    write_out.write(str(year) + "_" + genre + "_" + title)
