@@ -20,7 +20,7 @@ def decide(file_name, year):
         for line in games_data:
             if line != "":
                 game_year = int(line.split("\t")[2])
-                if game_year == year:
+                if game_year == int(year):
                     return True
     return False
 
