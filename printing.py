@@ -1,6 +1,11 @@
 import reports
 
-file_name = reports.file_name
+file_name = input(
+    "\nWhat's the name of a file with games data?\n\
+Write it with it's extension, eg. game_stat.txt\n\
+: "
+)
+file_name = __file__.split("printing.py")[0] + file_name
 
 print(
     "\nThere are "
@@ -42,4 +47,6 @@ print(
 with open(
     __file__.split("printing.py")[0] + "export_report.txt", "w"
 ) as write_out:
-    write_out.write(str(year) + "_" + genre + "_" + title)
+    write_out.write(
+        str(year) + "___" + genre + "___" + title + "___" + file_name
+    )

@@ -1,9 +1,3 @@
-file_name = input("\nWhat's the name of a file with games data?\n\
-Write it with it's extension, eg. game_stat.txt\n\
-: ")
-file_name = __file__.split("reports.py")[0] + file_name
-
-
 def count_games(file_name):
     """How many games are in the file?"""
     number_of_games = 0
