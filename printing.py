@@ -2,7 +2,9 @@ import reports
 
 file_name = reports.file_name
 print(
-    "\nThere are " + str(reports.count_games(file_name)) + " games in the file."
+    "\nThere are "
+    + str(reports.count_games(file_name))
+    + " games in the file."
 )
 year = input(
     "What is the year you would like to check if any \
