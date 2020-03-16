@@ -22,6 +22,7 @@ def decide(file_name, year):
 def get_latest(file_name):
     """Which was the latest game?"""
     latest_year = 0
+    GAME_TITLE = 0
     with open(file_name, "r", encoding="utf-8") as games_data:
         for line in games_data:
             if line != "":
@@ -31,7 +32,7 @@ def get_latest(file_name):
         games_data.seek(0)
         for line in games_data:
             if "\t" + str(latest_year) + "\t" in line:
-                return line.split("\t")[0]
+                return line.split("\t")[GAME_TITLE]
 
 
 def count_by_genre(file_name, genre):
@@ -58,9 +59,10 @@ def get_line_number_by_title(file_name, title):
 def sort_abc(file_name):
     """What is the alphabetical ordered list of the titles?"""
     list_of_games = []
+    GAME_TITLE = 0
     with open(file_name, "r", encoding="utf-8") as games_data:
         for line in games_data:
-            list_of_games.append(line.split("\t")[0])
+            list_of_games.append(line.split("\t")[GAME_TITLE])
     while any(
         list_of_games[i] < list_of_games[i - 1]
         for i in range(1, len(list_of_games))
