@@ -60,7 +60,7 @@ def sort_abc(file_name):
     list_of_games = []
     with open(file_name, "r", encoding="utf-8") as games_data:
         for line in games_data:
-            list_of_games.append(line.split("\n")[0])
+            list_of_games.append(line.split("\t")[0])
     while any(
         list_of_games[i] < list_of_games[i - 1]
         for i in range(1, len(list_of_games))
@@ -94,6 +94,7 @@ def when_was_top_sold_fps(file_name):
             if "First-person shooter" in line:
                 total_sold = float(line.split("\t")[1])
                 if total_sold > top_fps_sold:
+                    top_fps_sold = total_sold
                     top_fps_year = int(line.split("\t")[2])
         if top_fps_year != 0:
             return top_fps_year
